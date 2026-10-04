@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Saksha 🐾</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffe3ec;--ink:#4a2740;--pink:#ff7aa8;--mint:#b8f0d8;--sun:#ffd86b;--card:#fff8fb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b1630;--ink:#ffe9f2;--card:#43264a}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Fredoka,system-ui,sans-serif;overflow:hidden}
+#deck{display:flex;height:100%;width:300%;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+section{width:33.3333%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 24px 90px;text-align:center;position:relative}
+h1{font-family:Caveat,cursive;font-size:clamp(44px,10vw,84px);margin:8px 0;line-height:1}
+p{max-width:34ch;font-size:clamp(16px,3.6vw,20px);line-height:1.5;margin:6px 0}
+.cat{width:min(240px,60vw);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-2deg)}}
+.tail{transform-origin:200px 170px;animation:wag 1.4s ease-in-out infinite}
+@keyframes wag{50%{transform:rotate(14deg)}}
+.blink{animation:blink 4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.card{background:var(--card);border-radius:28px 28px 28px 8px;padding:20px 22px;max-width:380px;box-shadow:6px 6px 0 var(--pink);text-align:left}
+.card li{margin:8px 0;list-style:none}
+.hint{font-size:14px;opacity:.7;margin-top:14px}
+.btns{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;justify-content:center;min-height:56px}
+button{font:600 18px Fredoka,sans-serif;border:0;border-radius:99px;padding:14px 26px;cursor:pointer;color:#3a1c33}
+#yes{background:var(--pink);box-shadow:0 5px 0 #d94f82}
+#yes:active{transform:translateY(3px);box-shadow:0 2px 0 #d94f82}
+#maybe{background:var(--sun);box-shadow:0 5px 0 #d9ae2f;position:relative;transition:transform .15s}
+nav{position:fixed;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;align-items:center;gap:16px}
+nav button{padding:10px 18px;background:var(--card);color:var(--ink);box-shadow:0 3px 0 var(--pink)}
+nav button:disabled{opacity:.35}
+.dots{display:flex;gap:8px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--pink);opacity:.35;transition:.3s}.dots i.on{opacity:1;transform:scale(1.3)}
+.float{position:fixed;pointer-events:none;font-size:26px;animation:up 3s linear forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.pass{background:var(--card);border-radius:20px;padding:16px 20px;box-shadow:6px 6px 0 var(--pink);display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;text-align:left;width:min(380px,88vw);border:2px dashed var(--pink)}
+.pass small{display:block;opacity:.6;font-size:12px}.pass b{font-size:16px}
+.sky{position:relative;height:84px;width:min(380px,88vw);background:var(--mint);border-radius:20px;overflow:hidden;margin:16px 0 6px;color:#3a1c33}
+.cl{position:absolute;font-size:30px;opacity:.8}
+#plane{position:absolute;left:-15%;top:22px;font-size:38px}
+#plane.go{animation:fl 2.6s ease-in-out forwards}
+@keyframes fl{to{left:110%;top:4px}}
+#catw.sq{animation:sq .35s}@keyframes sq{40%{transform:scale(1.14,.86)}}
+.sp{position:fixed;pointer-events:none;font-size:22px;animation:sp .9s ease-out forwards;z-index:9}
+@keyframes sp{to{transform:translateY(-40px) rotate(20deg);opacity:0}}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div id="deck">
+<section>
+ <div id="catw" role="button" tabindex="0" aria-label="Pet the cat" style="cursor:pointer"><svg class="cat" viewBox="0 0 240 220" aria-label="Cartoon cat waving">
+  <path class="tail" d="M190 170 q50 -10 30 -60" stroke="#ffb86b" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <ellipse cx="110" cy="170" rx="62" ry="44" fill="#ffb86b"/>
+  <path d="M52 78 L62 22 L98 52Z M168 78 L158 22 L122 52Z" fill="#ffb86b"/>
+  <path d="M64 56 L68 36 L84 50Z M156 56 L152 36 L136 50Z" fill="#ff9ab8"/>
+  <circle cx="110" cy="100" r="62" fill="#ffb86b"/>
+  <g class="blink"><ellipse cx="86" cy="96" rx="7" ry="10" fill="#3a1c33"/><ellipse cx="134" cy="96" rx="7" ry="10" fill="#3a1c33"/></g>
+  <circle cx="88" cy="92" r="2.5" fill="#fff"/><circle cx="136" cy="92" r="2.5" fill="#fff"/>
+  <ellipse cx="110" cy="116" rx="6" ry="4.5" fill="#ff6f9c"/>
+  <path d="M110 120 q-8 12 -18 4 M110 120 q8 12 18 4" stroke="#3a1c33" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="68" cy="116" r="9" fill="#ff9ab8" opacity=".6"/><circle cx="152" cy="116" r="9" fill="#ff9ab8" opacity=".6"/>
+  <path d="M48 108 h-26 M50 118 l-24 8 M172 108 h26 M170 118 l24 8" stroke="#3a1c33" stroke-width="2.5" stroke-linecap="round"/>
+ </svg></div>
+ <h1 id="t1">Psst… Saksha 🙈</h1>
+ <p id="p1">This cat guards a surprise for you. Pet it 5 times to open it.</p>
+ <div id="meter" style="font-size:30px;letter-spacing:4px;margin-top:6px" aria-live="polite">🤍🤍🤍🤍🤍</div>
+</section>
+<section>
+ <h1>Boarding pass ✈️</h1>
+ <div class="pass">
+  <div><small>Passenger</small><b>Saksha</b></div>
+  <div><small>Pilot</small><b>Shyam (in training)</b></div>
+  <div><small>From</small><b>Kochi · COK</b></div>
+  <div><small>To</small><b>Somewhere fun</b></div>
+  <div><small>Flight</small><b>MEOW 001</b></div>
+  <div><small>Seat</small><b>Window, obviously</b></div>
+  <div><small>Co-pilot</small><b>Fluffy cat 🐱</b></div>
+ </div>
+ <div class="sky"><span class="cl" style="left:12%;top:8px">☁️</span><span class="cl" style="left:62%;top:40px">☁️</span><span id="plane">✈️</span></div>
+ <p id="ann" style="min-height:54px;font-weight:600">Ready when you are.</p>
+ <button id="fly" style="background:var(--mint)">Take off</button>
+</section>
+<section>
+ <h1>So… friends? 🌸</h1>
+ <p>No pressure, no catch. Just good chats, bad jokes and maybe cat pictures.</p>
+ <div class="btns"><button id="yes">Yes, friends!</button><button id="maybe">Let me think</button></div>
+ <p class="hint" style="margin:0">Your pick gets sent to me 🐱</p>
+ <p id="msg" style="font-family:Caveat;font-size:30px;min-height:40px"></p>
+ <button id="fort" style="background:var(--mint)">Cat fortune 🥠</button>
+ <p id="ft" style="min-height:48px;font-weight:600"></p>
+</section>
+</div>
+<nav><button id="prev">Back</button><div class="dots"><i class="on"></i><i></i><i></i></div><button id="next">Next</button></nav>
+<script>
+var i=0,deck=document.getElementById('deck'),dots=document.querySelectorAll('.dots i'),prev=document.getElementById('prev'),next=document.getElementById('next');
+function go(n){i=Math.max(0,Math.min(2,n));deck.style.transform='translateX('+(-i*33.3333)+'%)';dots.forEach(function(d,k){d.classList.toggle('on',k==i)});prev.disabled=i==0;next.disabled=i==2}
+prev.onclick=function(){go(i-1)};next.onclick=function(){go(i+1)};
+document.onkeydown=function(e){if(e.key=='ArrowRight')go(i+1);if(e.key=='ArrowLeft')go(i-1)};
+var sx=null;document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX});
+document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(i+(d<0?1:-1));sx=null});
+function rain(list,n){for(var k=0;k<n;k++){var s=document.createElement('span');s.className='float';s.textContent=list[k%list.length];s.style.left=Math.random()*95+'vw';s.style.bottom='-40px';s.style.animationDelay=(Math.random()*.8)+'s';document.body.appendChild(s);setTimeout(function(x){x.remove()},4200,s)}}
+var an=['Welcome aboard! Captain Shyam speaking, live from Kochi.','Today\u2019s forecast: 100% good vibes, zero turbulence.','Our co-pilot is asleep. Please do not wake the cat.','Fun fact: I\u2019m still studying to be a pilot, so this flight is on autopilot.','Snacks on board: memes and bad jokes only.','Fasten your seatbelt. Next stop: the last slide.'],ai=0,pl=document.getElementById('plane');
+document.getElementById('fly').onclick=function(){pl.classList.remove('go');void pl.offsetWidth;pl.classList.add('go');document.getElementById('ann').textContent=an[ai%6];ai++;rain(['\u2601\ufe0f','\ud83d\udc3e'],6)};
+document.getElementById('yes').onclick=function(){send('Yes, friends!');document.getElementById('msg').textContent='Yay!! Best decision ever 🐱💗';rain(['🐱','💗','🌸','🐾'],30)};
+var m=document.getElementById('maybe'),c=0,lines=['Take your time 🐢','Okay okay, I\u2019ll wait… 😼','Cat says yes btw 🐈'];
+m.onclick=function(){send('Let me think');document.getElementById('msg').textContent=lines[c%3];c++;m.style.transform='translate('+(Math.random()*80-40)+'px,'+(Math.random()*30-15)+'px) rotate('+(Math.random()*10-5)+'deg)'};
+var pets=0,cw=document.getElementById('catw'),pm=['Mrrp?','Purr…','More please!','Almost there!'];
+function pet(){if(pets>=5){rain(['\ud83d\udc97'],4);return}pets++;cw.classList.remove('sq');void cw.offsetWidth;cw.classList.add('sq');
+document.getElementById('meter').textContent='\ud83d\udc97'.repeat(pets)+'\ud83e\udd0d'.repeat(5-pets);
+if(pets<5){document.getElementById('p1').textContent=pm[pets-1]}else{document.getElementById('t1').textContent='Hi Saksha! \ud83d\udc3e';document.getElementById('p1').textContent='I made a tiny website for you.';rain(['\ud83d\udc31','\ud83d\udc97','\ud83c\udf38','\u2728'],36)}}
+cw.onclick=pet;cw.onkeydown=function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();pet()}};
+document.addEventListener('pointerdown',function(e){var p=document.createElement('span');p.className='sp';p.textContent='\ud83d\udc3e';p.style.left=(e.clientX-11)+'px';p.style.top=(e.clientY-11)+'px';document.body.appendChild(p);setTimeout(function(){p.remove()},950)});
+var fo=['A cat will sit on your laptop today. Good luck follows.','You will get a reply exactly when you stop checking.','Someone is thinking of a very good meme for you.','Your next coffee will taste extra good.','Today\u2019s lucky number: meow.'],fi=0;
+document.getElementById('fort').onclick=function(){document.getElementById('ft').textContent=fo[fi%5];fi++;rain(['\u2728','\ud83d\udc3e'],8)};
+function send(a){try{fetch('https://formspree.io/f/mgavggnp',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({answer:a,time:new Date().toString()})}).catch(function(){})}catch(e){}}
+go(0);
+</script></body></html>
